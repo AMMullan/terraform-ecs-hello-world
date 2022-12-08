@@ -29,7 +29,7 @@ resource "aws_ecs_service" "hello" {
   }
 
   network_configuration {
-    subnets         = data.aws_subnets.current.ids
+    subnets         = var.subnet_ids
     security_groups = [aws_security_group.hello_backend.id]
     # For the demo, attach a public IP. The VPC does not have
     # a gateway.

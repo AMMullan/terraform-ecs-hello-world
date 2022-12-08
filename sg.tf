@@ -4,7 +4,7 @@
 resource "aws_security_group" "hello_backend" {
   name        = var.name
   description = "Allow connections to the ${var.name} backend"
-  vpc_id      = data.aws_vpc.current.id
+  vpc_id      = var.vpc_id
 
   #ingress {
   #  description = "${var.name} backend HTTP"
@@ -35,7 +35,7 @@ resource "aws_security_group" "hello_backend" {
 resource "aws_security_group" "hello_frontend" {
   name        = "${var.name}-frontend"
   description = "Allow connections to the front-end HTTP"
-  vpc_id      = data.aws_vpc.current.id
+  vpc_id      = var.vpc_id
 
   ingress {
     description = "Permit Intranet HTTP access"

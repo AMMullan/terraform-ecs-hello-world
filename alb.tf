@@ -9,11 +9,10 @@ module "alb" {
 
   load_balancer_type = "application"
 
-  # For the demo, expose this publicly
-  internal = false
+  internal = true
 
-  vpc_id          = data.aws_vpc.current.id
-  subnets         = data.aws_subnets.current.ids
+  vpc_id          = var.vpc_id
+  subnets         = var.subnet_ids
   security_groups = [aws_security_group.hello_frontend.id]
 
   target_groups = [

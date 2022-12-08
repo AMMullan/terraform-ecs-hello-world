@@ -41,3 +41,12 @@ variable "tags" {
   type        = map(any)
   default     = {}
 }
+
+variable "vpc_id" {
+  type = string
+}
+
+
+variable "subnet_ids" {
+  type = list(string)
+}
