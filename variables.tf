@@ -50,3 +50,8 @@ variable "vpc_id" {
 variable "subnet_ids" {
   type = list(string)
 }
+
+variable "internal_alb" {
+  type = bool
+  default = true
+}
