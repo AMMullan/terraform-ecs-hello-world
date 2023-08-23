@@ -9,7 +9,7 @@ module "alb" {
 
   load_balancer_type = "application"
 
-  internal = true
+  internal = var.internal_alb
 
   vpc_id          = var.vpc_id
   subnets         = var.subnet_ids
